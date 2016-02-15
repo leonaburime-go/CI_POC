@@ -1,0 +1,9 @@
+FROM nginx
+
+#Expose port 80
+EXPOSE 80
+
+COPY nginx/html /usr/share/nginx/test
+
+#Start nginx server
+RUN service nginx restart

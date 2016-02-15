@@ -1,0 +1,30 @@
+data_volumes:
+  build: ./volumes
+  volumes:
+    - ./volumes:/docker_volumes
+mongodb:
+  build: ./mongodb
+  volumes_from:
+    - data_volumes
+  ports:
+    - "27017:27017"
+nginx:
+  build: ./centos-nginx
+  links:
+    - node_server
+  volumes_from:
+    - data_volumes
+  ports:
+    - "5000:80"
+node_server:
+  build: ./node_app
+  links:
+    - mongodb:mongodb
+  volumes_from:
+    - data_volumes
+  environment:
+    - PORT=3001
+  ports:
+    - "3001:3001"
+    - "3002:3002"
+

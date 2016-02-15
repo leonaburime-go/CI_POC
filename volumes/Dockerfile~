@@ -1,0 +1,8 @@
+FROM centos:latest
+
+RUN mkdir /custom_volumes
+
+COPY angular /custom_volumes/angular
+COPY angular /custom_volumes/
+
+VOLUME /custom_volumes
