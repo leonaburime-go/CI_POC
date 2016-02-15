@@ -3,5 +3,5 @@ sudo: required
 services:
   - docker
 
-before install
+before install:
   - docker-compose up -d
