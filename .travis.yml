@@ -2,17 +2,19 @@ sudo: required
 
 language: node_js
 
-node_js:
-  - "4.1"
-
 services:
   - docker
 
-before install:
+node_js:
+  - "4.1"
+
+before_install:
   - docker-compose --no-cache
   - docker-compose up -d
   - sleep 3
   - docker ps -a
+
+install: true
 
 scripts:
   - cd tests
