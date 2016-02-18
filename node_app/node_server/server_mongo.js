@@ -2,16 +2,16 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var app = express();
-//var MONGO_TCP_URL = process.env.MONGO_PORT;
-//var MONGO_DB_URL = MONGO_TCP_URL.replace('tcp','mongodb');
+var MONGO_TCP_URL = process.env.MONGO_PORT;
+var MONGO_DB_URL = MONGO_TCP_URL.replace('tcp','mongodb');
 var PORT = 3002;
 
 // console.log(MONGO_DB_URL)
 
 //Connect to our Mongoose database with host:'localhost' and 'port':'27017'
-//var db = mongoose.createConnection(MONGO_DB_URL);
+var db = mongoose.createConnection(MONGO_DB_URL);
 //Get an instance of 'test' collection to query
-//var test_collection = db.collection('test');
+var test_collection = db.collection('test');
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/hello', function(req, res) {
