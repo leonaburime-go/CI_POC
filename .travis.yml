@@ -9,7 +9,7 @@ node_js:
   - "4.1"
 
 before_install:
-  - docker-compose --no-cache
+  - docker-compose build --no-cache
   - docker-compose up -d
   - sleep 3
   - docker ps -a
