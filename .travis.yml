@@ -16,7 +16,7 @@ before_install:
 
 install: true
 
-scripts:
+script:
   - cd tests
   - docker ps -a
   - mocha 
