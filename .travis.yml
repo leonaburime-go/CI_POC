@@ -14,7 +14,8 @@ before_install:
   - sleep 3
   - docker ps -a
 
-install: true
+install:
+  - npm i -g mocha
 
 script:
   - cd tests
